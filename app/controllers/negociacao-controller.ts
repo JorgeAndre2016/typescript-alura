@@ -13,12 +13,13 @@ export class NegociacaoController {
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
-        this.negociacoesView.update();
+        this.negociacoesView.update(this.negociacoes);
     }
 
     adiciona(): void {
         const negociacao = this.criaNegociacao();
         this.negociacoes.adicionar(negociacao);
+        this.negociacoesView.update(this.negociacoes);
         // this.negociacoes.listar().pop(); // com o ajuste no retorno do metódo listar, não é possível mais apagar objetos do array original
         console.log(this.negociacoes.listar());
         this.limparFormulario();
