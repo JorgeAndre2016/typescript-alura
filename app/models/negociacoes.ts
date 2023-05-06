@@ -8,6 +8,6 @@ export class Negociacoes {
     }
 
     listar(): Array<Negociacao> {
-        return this.negociacoes;
+        return [...this.negociacoes]; // criando um novo objeto na memória
     }
 }
