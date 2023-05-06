@@ -18,7 +18,6 @@ export class NegociacaoController {
         this.negociacoes.adicionar(negociacao);
         // this.negociacoes.listar().pop(); // com o ajuste no retorno do metódo listar, não é possível mais apagar objetos do array original
         console.log(this.negociacoes.listar());
-        
         this.limparFormulario();
     }
 
