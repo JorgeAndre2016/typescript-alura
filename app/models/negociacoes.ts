@@ -7,7 +7,8 @@ export class Negociacoes {
         this.negociacoes.push(negociacao);
     }
 
-    listar(): Array<Negociacao> {
-        return [...this.negociacoes]; // criando um novo objeto na memória
+    listar(): ReadonlyArray<Negociacao> {
+        // return [...this.negociacoes]; // criando um novo objeto na memória com 'spread operator'
+        return this.negociacoes;
     }
 }
