@@ -21,15 +21,18 @@ export class NegociacaoController {
     public adiciona(): void {
         const negociacao = this.criaNegociacao();
 
-        if(negociacao.data.getDay() > 0 
-        && negociacao.data.getDay() < 6) {
-            this.negociacoes.adicionar(negociacao);
-            // this.negociacoes.listar().pop(); // com o ajuste no retorno do metódo listar, não é possível mais apagar objetos do array original
-            this.limparFormulario();
-            this.atualizaView();
-        } else {
+        if(!this.ehDiaUtil(negociacao.data)) {
             this.mensagemView.update('Negociações só são aceitas em dias úteis');
+            return;
         }
+        this.negociacoes.adicionar(negociacao);
+        // this.negociacoes.listar().pop(); // com o ajuste no retorno do metódo listar, não é possível mais apagar objetos do array original
+        this.limparFormulario();
+        this.atualizaView();
+    }
+
+    private ehDiaUtil(date: Date): boolean {
+        return date.getDay() > 0 && date.getDay() < 6;
     }
 
     private criaNegociacao(): Negociacao {
