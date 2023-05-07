@@ -3,6 +3,10 @@ export function domInjetor(seletor: string) {
         target: any,
         propertyKey: string
     ) {
-        
+
+        const getter = function() {
+            const elemento = document.querySelector(seletor);
+            return elemento;
+        }
     }
 }
