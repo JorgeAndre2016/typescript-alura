@@ -11,7 +11,6 @@ export class Negociacoes {
     
     // listar(): ReadonlyArray<Negociacao> { // outra maneira de declaração usando o generics
     public listar(): readonly Negociacao[] {
-        return [...this.negociacoes]; // criando um novo objeto na memória com 'spread operator'
         // return [...this.negociacoes]; // criando um novo objeto na memória com 'spread operator'
         return this.negociacoes;
     }
