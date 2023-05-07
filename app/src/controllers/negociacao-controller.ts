@@ -17,11 +17,11 @@ export class NegociacaoController {
         this.inputData = document.querySelector('#data') as HTMLInputElement;
         this.inputQuantidade = <HTMLInputElement>document.querySelector('#quantidade'); // outra maneira de declaração 
         this.inputValor = document.querySelector('#valor') as HTMLInputElement;
-        this.negociacoesView.update(this.negociacoes);
+        this.negociacoesView.atualizar(this.negociacoes);
     }
 
     @logarTempoDeExecucao()
-    public adiciona(): void {
+    public adicionar(): void {
         const negociacao = Negociacao.criaDe(
             this.inputData.value,
             this.inputQuantidade.value,
@@ -29,7 +29,7 @@ export class NegociacaoController {
         );
 
         if(!this.ehDiaUtil(negociacao.data)) {
-            this.mensagemView.update('Negociações só são aceitas em dias úteis');
+            this.mensagemView.atualizar('Negociações só são aceitas em dias úteis');
             return;
         }
         this.negociacoes.adicionar(negociacao);
@@ -51,7 +51,7 @@ export class NegociacaoController {
     }
 
     private atualizaView(): void {
-        this.negociacoesView.update(this.negociacoes);
-        this.mensagemView.update('Negociação adicionada com sucesso.');
+        this.negociacoesView.atualizar(this.negociacoes);
+        this.mensagemView.atualizar('Negociação adicionada com sucesso.');
     }
 }
