@@ -17,8 +17,8 @@ export abstract class View<T> {
         if(escapar) this.escapar = escapar;
     }
 
-    @inspecionar()
     @logarTempoDeExecucao(true)
+    @inspecionar // decorator simplificado
     public atualizar(model: T): void {
         let template = this.template(model);
         if(this.escapar) {

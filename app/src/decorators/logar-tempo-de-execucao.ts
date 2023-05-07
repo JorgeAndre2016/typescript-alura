@@ -1,3 +1,4 @@
+// desta maneira com function > function é possível passar parâmetros para o decorator
 export function logarTempoDeExecucao(emSegundos = false) {
     return function(
         targer: any,
