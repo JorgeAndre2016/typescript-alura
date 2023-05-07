@@ -1,3 +1,4 @@
+import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 import { DiasDaSemana } from "../enums/dias-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
@@ -19,8 +20,8 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     }
 
+    @logarTempoDeExecucao()
     public adiciona(): void {
-        const timerStart = performance.now();
         const negociacao = Negociacao.criaDe(
             this.inputData.value,
             this.inputQuantidade.value,
@@ -35,8 +36,6 @@ export class NegociacaoController {
         // this.negociacoes.listar().pop(); // com o ajuste no retorno do metódo listar, não é possível mais apagar objetos do array original
         this.limparFormulario();
         this.atualizaView();
-        const timerEnd = performance.now();
-        console.log(`Tempo de execução do método adiciona: ${(timerEnd - timerStart)/1000} segundos`);
     }
 
     private ehDiaUtil(date: Date): boolean {
