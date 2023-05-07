@@ -1,3 +1,4 @@
+import { domInjetor } from "../decorators/dom-injetor.js";
 import { inspecionar } from "../decorators/inspecionar.js";
 import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 import { DiasDaSemana } from "../enums/dias-da-semana.js";
@@ -7,17 +8,21 @@ import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 
 export class NegociacaoController {
+
+    @domInjetor('#data')
     private inputData: HTMLInputElement;
+    @domInjetor('#quantidade')
     private inputQuantidade: HTMLInputElement;
+    @domInjetor('#valor')
     private inputValor: HTMLInputElement;
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView');
     private mensagemView = new MensagemView('#mensagemView');
 
     constructor() {
-        this.inputData = document.querySelector('#data') as HTMLInputElement;
-        this.inputQuantidade = <HTMLInputElement>document.querySelector('#quantidade'); // outra maneira de declaração 
-        this.inputValor = document.querySelector('#valor') as HTMLInputElement;
+        // this.inputData = document.querySelector('#data') as HTMLInputElement;
+        // this.inputQuantidade = <HTMLInputElement>document.querySelector('#quantidade'); // outra maneira de declaração 
+        // this.inputValor = document.querySelector('#valor') as HTMLInputElement;
         this.negociacoesView.atualizar(this.negociacoes);
     }
 
