@@ -8,8 +8,8 @@ export function escapar(
     descriptor.value = function(...args: any[]) {
         let retOrig = metodoOriginal.apply(this, args);
         if(typeof retOrig === 'string') {
-            console.log(`@escape em ação na class ${this.constructor.name} 
-                para o método ${propertyKey}`);
+            // console.log(`@escape em ação na class ${this.constructor.name} 
+            //     para o método ${propertyKey}`);
             
             retOrig = retOrig
                 .replace(/<script>[\s\S]*?<\/script>/, '');
