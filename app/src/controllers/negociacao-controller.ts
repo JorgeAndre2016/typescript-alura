@@ -5,6 +5,7 @@ import { DiasDaSemana } from "../enums/dias-da-semana.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
 import { NegociacoesService } from "../services/negociacoes-services.js";
+import { imprimir } from "../utils/imprimir.js";
 import { MensagemView } from "../views/mensagem-view.js";
 import { NegociacoesView } from "../views/negociacoes-view.js";
 
@@ -43,8 +44,7 @@ export class NegociacaoController {
         }
         this.negociacoes.adicionar(negociacao);
         // this.negociacoes.listar().pop(); // com o ajuste no retorno do metódo listar, não é possível mais apagar objetos do array original
-        console.log(negociacao.paraTexto());
-        console.log(this.negociacoes.paraTexto());
+        imprimir(negociacao);
         this.limparFormulario();
         this.atualizaView();
     }
