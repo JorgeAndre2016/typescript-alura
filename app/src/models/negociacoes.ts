@@ -1,8 +1,9 @@
-import { Comparavel } from "../interfaces/comparavel";
-import { Imprimivel } from "../utils/imprimivel.js";
+// import { Comparavel } from "../interfaces/comparavel.js";
+// import { Imprimivel } from "../utils/imprimivel.js";
+import { Modelo } from "../interfaces/modelo.js";
 import { Negociacao } from "./negociacao.js";
 
-export class Negociacoes implements Imprimivel, Comparavel<Negociacoes> {
+export class Negociacoes implements Modelo<Negociacoes> {
 
     // private negociacoes: Array<Negociacao> = []; // outra maneira de declaração usando o generics
     private negociacoes: Negociacao[] = [];
