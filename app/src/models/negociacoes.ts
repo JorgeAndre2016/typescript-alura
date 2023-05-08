@@ -1,7 +1,7 @@
 import { Imprimivel } from "../utils/imprimivel.js";
 import { Negociacao } from "./negociacao.js";
 
-export class Negociacoes extends Imprimivel {
+export class Negociacoes implements Imprimivel {
 
     // private negociacoes: Array<Negociacao> = []; // outra maneira de declaração usando o generics
     private negociacoes: Negociacao[] = [];

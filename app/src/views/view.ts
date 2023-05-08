@@ -1,5 +1,5 @@
-import { inspecionar } from "../decorators/inspecionar.js";
-import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
+// import { inspecionar } from "../decorators/inspecionar.js";
+// import { logarTempoDeExecucao } from "../decorators/logar-tempo-de-execucao.js";
 
 export abstract class View<T> {
 
