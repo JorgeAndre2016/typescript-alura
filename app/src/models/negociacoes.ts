@@ -14,4 +14,8 @@ export class Negociacoes {
         // return [...this.negociacoes]; // criando um novo objeto na memória com 'spread operator'
         return this.negociacoes;
     }
+
+    public paraTexto(): string {
+        return JSON.stringify(this.negociacoes, null, 2);
+    }
 }
